@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Beer, Calendar, MapPin, BookOpen, Star } from "lucide-react";
+import { Beer, BookOpen, Camera, MapPin } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function BottomNav() {
@@ -12,29 +12,75 @@ export default function BottomNav() {
   const navItems = [
     { href: "/menu", icon: Beer, label: dict.nav.menu },
     { href: "/historia", icon: BookOpen, label: dict.nav.history },
-    { href: "/reservas", icon: Star, label: dict.nav.book.split(' ')[0] },
-    { href: "/localizacao", icon: MapPin, label: dict.nav.location.split(' ')[0] },
+    { href: "/galeria", icon: Camera, label: dict.nav.gallery || "Galeria" },
+    { href: "/localizacao", icon: MapPin, label: dict.nav.location },
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 z-50 w-full h-16 bg-[#0a0a0a]/95 backdrop-blur-md border-t border-white/5 md:hidden">
-      <div className="grid h-full grid-cols-4 mx-auto max-w-lg">
-        {navItems.map((item) => {
-          const isActive = pathname === item.href;
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="inline-flex flex-col items-center justify-center px-2 group transition-all"
+    <nav
+      style={{
+        position: "fixed",
+        bottom: 0,
+        left: 0,
+        width: "100%",
+        height: "3.75rem",
+        background: "rgb(10, 6, 4)",
+        borderTop: "1px solid rgba(191, 31, 26, 0.22)",
+        display: "flex",
+        justifyContent: "space-around",
+        alignItems: "center",
+        zIndex: 50,
+        boxSizing: "border-box",
+        padding: "0 0.5rem",
+      }}
+      className="bottom-nav"
+    >
+      {navItems.map((item) => {
+        const isActive = pathname === item.href;
+        const Icon = item.icon;
+
+        return (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="inline-flex flex-col items-center justify-center px-2 hover:bg-white/5 group transition-colors"
+            style={{ textDecoration: "none" }}
+          >
+            <Icon
+              style={{
+                width: "20px",
+                height: "20px",
+                transition: "color 0.2s, filter 0.2s",
+              }}
+              className={
+                isActive
+                  ? "text-[#bf1f1a] drop-shadow-[0_0_15px_rgba(191,31,26,0.5)]"
+                  : "text-[#8a7256] group-hover:text-[#bf1f1a]"
+              }
+            />
+            <span
+              style={{
+                fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif",
+                fontSize: "0.72rem",
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                marginTop: "2px",
+                transition: "color 0.2s",
+              }}
+              className={isActive ? "text-[#bf1f1a]" : "text-[#8a7256] group-hover:text-[#bf1f1a]"}
             >
-              <item.icon className={`w-5 h-5 mb-1 transition-colors ${isActive ? "text-[#dc2626]" : "text-[#f0e6cc]/40 group-hover:text-[#dc2626]"}`} />
-              <span className={`text-[9px] font-bebas tracking-widest transition-colors ${isActive ? "text-[#dc2626]" : "text-[#f0e6cc]/40 group-hover:text-[#dc2626]"}`}>
-                {item.label.toUpperCase()}
-              </span>
-            </Link>
-          );
-        })}
-      </div>
+              {item.label}
+            </span>
+          </Link>
+        );
+      })}
+
+      {/* Embedded CSS for bulletproof responsiveness */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (min-width: 641px) {
+          .bottom-nav { display: none !important; }
+        }
+      `}} />
     </nav>
   );
 }

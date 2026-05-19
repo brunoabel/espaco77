@@ -3,129 +3,149 @@
 import React from "react";
 import Link from "next/link";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { motion } from "framer-motion";
-import { ArrowRight, Star } from "lucide-react";
 
 export default function Home() {
   const { dict } = useLanguage();
 
+  const tickerText = dict.home.ticker.join(" • ") + " • " + dict.home.ticker.join(" • ");
+
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-[#f0e6cc] overflow-hidden selection:bg-[#dc2626] selection:text-white">
-      
-      {/* HERO SECTION */}
-      <section className="relative min-h-screen flex flex-col justify-center px-6 pt-20 pb-32">
+    <main>
+      <section
+        style={{
+          height: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          padding: "0px 1.5rem",
+          backgroundColor: "rgb(10, 6, 4)",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
         {/* Background Decorative "77" */}
-        <div className="absolute right-[-10%] bottom-[10%] text-[40vw] font-bebas text-[#dc2626]/5 leading-none select-none pointer-events-none z-0">
+        <div
+          style={{
+            position: "absolute",
+            right: "-5vw",
+            bottom: "10vh",
+            fontSize: "30vw",
+            fontFamily: "var(--font-bebas)",
+            color: "rgba(191, 31, 26, 0.03)",
+            pointerEvents: "none",
+            userSelect: "none",
+          }}
+        >
           77
         </div>
 
-        <div className="max-w-7xl mx-auto w-full relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center gap-3 mb-8"
+        <div className="max-w-[72rem] mx-auto w-full animate-in">
+          <p
+            style={{
+              fontFamily: "var(--font-bebas)",
+              color: "rgb(191, 31, 26)",
+              fontSize: "0.85rem",
+              letterSpacing: "0.3em",
+              marginBottom: "2rem",
+              textTransform: "uppercase",
+            }}
           >
-            <div className="w-12 h-[2px] bg-[#dc2626]" />
-            <span className="font-bebas text-sm tracking-[0.4em] text-[#dc2626] uppercase font-bold">
-              {dict.home.tag}
-            </span>
-          </motion.div>
-          
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-bebas text-[clamp(4rem,15vw,10rem)] leading-[0.85] tracking-tighter mb-12"
+            {dict.home.tag}
+          </p>
+
+          <h1
+            style={{
+              fontFamily: "var(--font-bebas)",
+              fontSize: "clamp(4rem, 15vw, 10rem)",
+              lineHeight: 0.85,
+              color: "rgb(240, 230, 204)",
+              letterSpacing: "-0.01em",
+              marginBottom: "3rem",
+            }}
           >
-            {dict.home.hero1}<br />
-            <span className="text-[#dc2626]">{dict.home.hero2}</span><br />
+            {dict.home.hero1}
+            <br />
+            <span style={{ color: "rgb(191, 31, 26)" }}>{dict.home.hero2}</span>
+            <br />
             {dict.home.hero3}
-          </motion.h1>
+          </h1>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="max-w-2xl"
+          <p
+            style={{
+              fontFamily: "var(--font-lora)",
+              fontSize: "1.1rem",
+              color: "rgb(138, 114, 86)",
+              maxWidth: "30rem",
+              lineHeight: 1.6,
+              marginBottom: "4rem",
+            }}
           >
-            <p className="font-lora text-lg sm:text-xl text-[#8a7256] leading-relaxed mb-12">
-              {dict.home.subtitle[0]}
-              <span className="text-[#f0e6cc] font-bold mx-1">{dict.home.subtitle[1]}</span>
-              {dict.home.subtitle[2]}
-              <br className="hidden sm:block" />
-              {dict.home.quote[1]}
-            </p>
-
-            <div className="flex flex-wrap gap-6">
-              <Link href="/menu" className="group bg-[#dc2626] text-white px-10 py-4 font-bebas text-xl tracking-widest hover:bg-white hover:text-[#0a0a0a] transition-all flex items-center gap-3 shadow-2xl shadow-[#dc2626]/20">
-                {dict.home.btnMenu} <ArrowRight className="group-hover:translate-x-2 transition-transform" />
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* TICKER */}
-        <div className="absolute bottom-10 left-0 w-full overflow-hidden opacity-20 hover:opacity-40 transition-opacity border-y border-white/5 py-4 bg-white/5 backdrop-blur-sm select-none">
-          <div className="flex whitespace-nowrap animate-ticker">
-            <span className="font-bebas text-2xl tracking-[0.2em] flex items-center">
-              {Array(4).fill(dict.home.ticker.join(" · ")).join(" · ")}
+            {dict.home.subtitle[0]}
+            <span style={{ color: "rgb(240, 230, 204)", fontWeight: "bold" }}>
+              {dict.home.subtitle[1]}
             </span>
+            {dict.home.subtitle[2]}
+            <br />
+            {dict.home.quote[1]}
+          </p>
+
+          <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
+            <Link
+              href="/menu"
+              style={{
+                backgroundColor: "rgb(191, 31, 26)",
+                color: "rgb(255, 255, 255)",
+                padding: "1.2rem 2.5rem",
+                fontFamily: "var(--font-bebas)",
+                fontSize: "1.1rem",
+                letterSpacing: "0.1em",
+                textDecoration: "none",
+                transition: "0.3s",
+              }}
+            >
+              {dict.home.btnMenu}
+            </Link>
+          </div>
+        </div>
+
+        {/* Ticker Row */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: "2rem",
+            left: 0,
+            width: "100%",
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            opacity: 0.3,
+          }}
+        >
+          <div
+            style={{
+              display: "inline-block",
+              animation: "ticker 30s linear infinite",
+              fontFamily: "var(--font-bebas)",
+              fontSize: "1.5rem",
+              color: "rgb(240, 230, 204)",
+              letterSpacing: "0.2em",
+            }}
+          >
+            {tickerText}
           </div>
         </div>
       </section>
 
-      {/* FEATURED CARDS */}
-      <section className="py-32 px-6 bg-[#0d0d0d]">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-20">
-            {dict.home.cards.map((card, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.2 }}
-                className="group"
-              >
-                <p className="font-bebas text-[#dc2626] text-sm tracking-widest mb-4 opacity-60">
-                  {card.num}
-                </p>
-                <h2 className="font-bebas text-4xl mb-6 group-hover:text-[#dc2626] transition-colors leading-tight">
-                  {card.title}
-                </h2>
-                <p className="font-lora text-[#8a7256] mb-8 leading-relaxed">
-                  {card.desc}
-                </p>
-                <Link href={card.link.includes('carta') ? '/menu' : card.link.includes('agenda') ? '/menu' : '/localizacao'} className="inline-flex items-center gap-2 font-bebas text-lg tracking-widest text-[#dc2626] hover:text-[#f0e6cc] transition-colors">
-                  {card.link}
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FOOTER-ISH QUOTE */}
-      <section className="py-40 px-6 text-center bg-[#0a0a0a]">
-        <div className="max-w-4xl mx-auto">
-          <Star className="mx-auto text-[#dc2626] mb-12 opacity-40 animate-pulse" size={48} />
-          <h2 className="font-bebas text-4xl sm:text-6xl md:text-7xl leading-[0.9] tracking-tighter mb-8 italic">
-            "{dict.home.quote[0]} <span className="text-[#dc2626] not-italic">{dict.home.quote[1]}</span> {dict.home.quote[2]}"
-          </h2>
-          <p className="font-lora text-[#8a7256] text-sm tracking-widest uppercase opacity-60">Espaço 77 · O Coração do Porto</p>
-        </div>
-      </section>
-
-      <style jsx global>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes ticker {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
         }
-        .animate-ticker {
-          animation: ticker 40s linear infinite;
-        }
-      `}</style>
+      `}} />
     </main>
   );
 }
+

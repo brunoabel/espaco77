@@ -33,68 +33,649 @@ export const dictionaries = {
     },
     menu: {
       tag: "O que há para comer e beber",
-      title: "MENU",
-      tabs: { drinks: "BEBIDAS", food: "COMIDA" },
-      categories: {
-        sandwiches: "SANDES & SNACKS",
-        plates: "NO PRATO",
-        savories: "SALGADOS",
-        pizzas: "PIZZAS",
-        sharing: "PARA PARTILHAR",
-        beer_bottle: "CERVEJAS (GARRAFA)",
-        beer_draft: "CERVEJA À PRESSÃO",
-        wines: "VINHOS",
-        cocktails: "DRINKS & COCKTAILS",
-        shots: "SHOTS"
-      },
-      items: {
-        mini: { name: "Mini Super Bock", price: "0,95€", isPopular: true },
-        mini_stout: { name: "Mini Stout 20cl", price: "1,10€" },
-        super_bock_33: { name: "Super Bock 33cl", price: "2,40€" },
-        super_bock_especial: { name: "Super Bock s/ glúten / Stout / Green", price: "2,60€" },
-        coruja: { name: "Coruja IPA", price: "2,45€" },
-        stella: { name: "Stella Artois", price: "2,95€" },
-        desperados: { name: "Desperados", price: "3,25€" },
-        balde: { name: "Balde de Minis (11 un)", price: "9,50€", isPopular: true },
-        fino: { name: "Fino 20cl", price: "1,50€" },
-        principe: { name: "Príncipe 35cl", price: "2,25€" },
-        rei: { name: "Rei 40cl", price: "2,50€" },
-        caneca: { name: "Caneca 50cl", price: "3,20€" },
-        shots_mix: { name: "Shots: Kalashnikov, Dragon Ball, B-52, Tequila", price: "2,00€", isPopular: true },
-        bagaço: { name: "Bagaço", price: "1,00€" },
-        vinho_maduro: { name: "Maduro (Tavedo, Alandro, Esteve)", price: "2,00€", priceAlt: "6,50€" },
-        vinho_verde: { name: "Verde (Casal Garcia, Gazela)", price: "2,50€", priceAlt: "12,95€" },
-        caipirinha: { name: "Caipirinha", price: "6,50€" },
-        mojito: { name: "Mojito", price: "6,50€" },
-        gin_tonica: { name: "Gin Tónica", price: "6,50€" },
-        bifana: { name: "Bifana", price: "2,50€", isPopular: true },
-        sande_mista: { name: "Sande Mista", price: "2,50€" },
-        sande_queijo: { name: "Sande de Queijo", price: "1,95€" },
-        sande_fiambre: { name: "Sande de Fiambre", price: "1,80€" },
-        sande_fiambre_ovo: { name: "Sande de Fiambre c/ ovo", price: "2,60€" },
-        tosta_mista: { name: "Tosta Mista", price: "4,25€" },
-        tosta_mista_77: { name: "Tosta Mista à 77", price: "6,95€" },
-        panado_frango: { name: "Panado de Frango", price: "3,10€" },
-        panado_porco: { name: "Panado de Porco", price: "2,80€" },
-        cachorro: { name: "Cachorro", price: "4,75€" },
-        prego: { name: "Prego em Pão", price: "4,95€" },
-        prego_77: { name: "Prego em Pão à 77", price: "9,95€" },
-        francesinha: { name: "Francesinha", price: "11,90€", isPopular: true },
-        francesinha_esp: { name: "Francesinha Especial (c/ ovo e batata)", price: "13,95€" },
-        prego_prato: { name: "Prego em Prato", price: "12,75€" },
-        bifanas_prato: { name: "Bifanas em Prato", price: "7,95€" },
-        sopa: { name: "Sopa", price: "2,25€" },
-        coxinha: { name: "Coxinha de Frango", price: "2,20€" },
-        rissol_leitao: { name: "Rissol de Leitão", price: "2,20€" },
-        rissol_vários: { name: "Rissol (Carne, Camarão ou Cogumelos)", price: "1,80€" },
-        chamuca: { name: "Chamuça de carne c/ caril", price: "1,80€" },
-        bacalhau: { name: "Bolinho de bacalhau", price: "1,70€" },
-        frango_passarinho: { name: "Frango à Passarinho", price: "6,50€" },
-        moelas: { name: "Pratinho de Moelas", price: "6,25€" },
-        batata_queijo_bacon: { name: "Batata Frita c/ Queijo e Bacon", price: "5,80€", isPopular: true }
-      },
-      note: "Preços sujeitos a alteração · Pergunte ao balcão pelo prato do dia",
-      labels: { copo: "Copo", garrafa: "Garrafa" }
+        title: "MENU",
+        tabs: {
+          drinks: "BEBIDAS",
+          food: "COMIDA"
+        },
+        food: [
+          {
+            id: "salgados",
+            title: "SALGADOS",
+            items: [
+              {
+                name: "Coxinha de Frango",
+                price: "2,20€"
+              },
+              {
+                name: "Rissol de Leitão",
+                price: "2,20€"
+              },
+              {
+                name: "Rissol de Carne",
+                price: "1,80€"
+              },
+              {
+                name: "Rissol de Camarão",
+                price: "1,80€"
+              },
+              {
+                name: "Rissol de Cogumelos com caril",
+                price: "1,80€"
+              },
+              {
+                name: "Chamuça de Carne com caril",
+                price: "1,80€"
+              },
+              {
+                name: "Croquete de Carne",
+                price: "1,80€"
+              },
+              {
+                name: "Bolinho de Bacalhau",
+                price: "1,70€"
+              }
+            ]
+          },
+          {
+            id: "pizzas",
+            title: "PIZZAS",
+            items: [
+              {
+                name: "Pizza Carbonara",
+                price: "2,60€"
+              },
+              {
+                name: "Pizza Mista com Azeitona",
+                price: "2,60€"
+              },
+              {
+                name: "Pizza Vegetariana",
+                price: "2,60€"
+              }
+            ]
+          },
+          {
+            id: "pizza_pao",
+            title: "PIZZA PÃO",
+            items: [
+              {
+                name: "Pizza Pão Mista (queijo e fiambre)",
+                price: "2,80€"
+              },
+              {
+                name: "Pizza Pão de Cogumelos",
+                price: "2,80€"
+              },
+              {
+                name: "Pizza Pão Carbonara",
+                price: "2,80€"
+              }
+            ]
+          },
+          {
+            id: "panikes",
+            title: "PANIKES E FOLHADOS",
+            items: [
+              {
+                name: "Panike Misto (queijo e fiambre)",
+                price: "1,75€"
+              },
+              {
+                name: "Panike Combinado (carne, queijo e fiambre)",
+                price: "2,25€"
+              },
+              {
+                name: "Folhado de Frango",
+                price: "2,20€"
+              },
+              {
+                name: "Folhado de Espinafres (Malha)",
+                price: "2,20€"
+              }
+            ]
+          },
+          {
+            id: "doces",
+            title: "DOCES",
+            items: [
+              {
+                name: "Pastel de Nata",
+                price: "1,60€"
+              },
+              {
+                name: "Panike de Chocolate",
+                price: "1,60€"
+              },
+              {
+                name: "Panike de Ovo Creme",
+                price: "1,60€"
+              }
+            ]
+          },
+          {
+            id: "feitos_no_pao",
+            title: "FEITOS NO PÃO",
+            items: [
+              {
+                name: "Bifana",
+                price: "2,50€",
+                isPopular: true
+              },
+              {
+                name: "Sande Mista",
+                price: "2,50€"
+              },
+              {
+                name: "Sande de Queijo",
+                price: "1,95€"
+              },
+              {
+                name: "Sande de Fiambre",
+                price: "1,80€"
+              },
+              {
+                name: "Sande de Fiambre com Ovo",
+                price: "2,60€"
+              },
+              {
+                name: "Tosta Mista",
+                price: "4,25€"
+              },
+              {
+                name: "Tosta Mista à 77",
+                price: "6,95€"
+              },
+              {
+                name: "Panado de Frango",
+                price: "3,10€"
+              },
+              {
+                name: "Panado de Porco",
+                price: "2,80€"
+              },
+              {
+                name: "Panado de Frango com Ovo Estrelado",
+                price: "4,10€"
+              },
+              {
+                name: "Panado de Porco com Ovo Estrelado",
+                price: "3,80€"
+              },
+              {
+                name: "Cachorro",
+                price: "4,75€"
+              },
+              {
+                name: "Cachorro à 77",
+                price: "7,25€"
+              },
+              {
+                name: "Americana (com ovo, fiambre, queijo, alface, tomate)",
+                price: "4,25€"
+              },
+              {
+                name: "Hambúrguer",
+                price: "5,25€"
+              },
+              {
+                name: "Hambúrguer com Ovo Estrelado",
+                price: "6,15€"
+              },
+              {
+                name: "Prego em Pão",
+                price: "4,95€"
+              },
+              {
+                name: "Prego em Pão com Ovo Estrelado",
+                price: "5,95€"
+              },
+              {
+                name: "Prego em Pão Misto",
+                price: "5,95€"
+              },
+              {
+                name: "Prego em Pão à 77",
+                price: "9,95€"
+              }
+            ]
+          },
+          {
+            id: "partilhar",
+            title: "PARA PARTILHAR",
+            items: [
+              {
+                name: "Frango à Passarinho (Dose pequena)",
+                price: "6,50€"
+              },
+              {
+                name: "Frango à Passarinho (Dose grande individual)",
+                price: "12,95€"
+              },
+              {
+                name: "Torresmo (Dose pequena)",
+                price: "6,75€"
+              },
+              {
+                name: "Torresmo (Dose grande individual)",
+                price: "12,95€"
+              },
+              {
+                name: "Batata Frita com Queijo e Bacon",
+                price: "5,80€",
+                isPopular: true
+              },
+              {
+                name: "Batata Frita com Bacon",
+                price: "4,70€"
+              },
+              {
+                name: "Batata Frita com Queijo",
+                price: "4,40€"
+              },
+              {
+                name: "Batata Frita Simples",
+                price: "3,25€"
+              },
+              {
+                name: "Pratinho de Moelas",
+                price: "6,25€"
+              },
+              {
+                name: "Punheta de Bacalhau",
+                price: "6,75€"
+              },
+              {
+                name: "Pica-pau",
+                price: "14,75€"
+              },
+              {
+                name: "Tremoços ou Amendoins",
+                price: "1,90€"
+              },
+              {
+                name: "Azeitonas",
+                price: "2,25€"
+              },
+              {
+                name: "Adicional à 77 (molho francesinha e queijo)",
+                price: "1,50€"
+              }
+            ]
+          },
+          {
+            id: "no_prato",
+            title: "NO PRATO",
+            items: [
+              {
+                name: "Francesinha",
+                price: "11,90€",
+                isPopular: true
+              },
+              {
+                name: "Francesinha Especial (com ovo e batata)",
+                price: "13,95€"
+              },
+              {
+                name: "Bifanas em Prato",
+                price: "7,95€"
+              },
+              {
+                name: "Prego em Prato",
+                price: "12,75€"
+              },
+              {
+                name: "Salsicha com Ovo e Batatas",
+                price: "7,95€"
+              },
+              {
+                name: "Sopa",
+                price: "2,25€"
+              }
+            ]
+          }
+        ],
+        drinks: [
+          {
+            id: "cerveja_garrafa",
+            title: "CERVEJA EM GARRAFA (SUPER BOCK)",
+            items: [
+              {
+                name: "Mini 20cl",
+                price: "0,95€",
+                isPopular: true
+              },
+              {
+                name: "Mini Stout 20cl",
+                price: "1,10€"
+              },
+              {
+                name: "Super Bock 33cl",
+                price: "2,40€"
+              },
+              {
+                name: "Super Bock sem glúten 33cl",
+                price: "2,60€"
+              },
+              {
+                name: "Super Bock Stout 33cl",
+                price: "2,60€"
+              },
+              {
+                name: "Super Bock Green 33cl",
+                price: "2,60€"
+              },
+              {
+                name: "Super Bock sem álcool 33cl",
+                price: "2,60€"
+              },
+              {
+                name: "Coruja Indian Pale Ale",
+                price: "2,45€"
+              },
+              {
+                name: "Stella Artois",
+                price: "2,95€"
+              },
+              {
+                name: "Desperados",
+                price: "3,25€"
+              },
+              {
+                name: "Balde de Minis (Pague 10 e leve 11)",
+                price: "9,50€",
+                isPopular: true
+              },
+              {
+                name: "Adicional para balde de Stout",
+                price: "+1,00€"
+              }
+            ]
+          },
+          {
+            id: "cerveja_pressao",
+            title: "CERVEJA À PRESSÃO",
+            items: [
+              {
+                name: "Fino 20cl",
+                price: "1,50€",
+                isPopular: true
+              },
+              {
+                name: "Príncipe 35cl",
+                price: "2,25€"
+              },
+              {
+                name: "Rei 40cl",
+                price: "2,50€"
+              },
+              {
+                name: "Caneca 50cl",
+                price: "3,20€"
+              }
+            ]
+          },
+          {
+            id: "vinhos",
+            title: "VINHOS",
+            labels: {
+              price1: "Copo",
+              price2: "Garrafa"
+            },
+            items: [
+              {
+                name: "Vinho Maduro Tinto ou Branco",
+                price: "2,00€",
+                priceAlt: ""
+              },
+              {
+                name: "Vinho Maduro Garrafa (Tavedo, Alandro, Esteva, Porta da Ravessa)",
+                price: "",
+                priceAlt: "6,50€"
+              },
+              {
+                name: "Vinho Verde Branco (Casal Garcia, Gazela, Muralhas) 37,5cl",
+                price: "",
+                priceAlt: "6,45€"
+              },
+              {
+                name: "Vinho Verde Branco (Casal Garcia, Gazela, Muralhas) 75cl",
+                price: "",
+                priceAlt: "12,95€"
+              }
+            ]
+          },
+          {
+            id: "aguas",
+            title: "ÁGUAS",
+            items: [
+              {
+                name: "Água Natural",
+                price: "1,70€"
+              },
+              {
+                name: "Água com Gás",
+                price: "1,80€"
+              },
+              {
+                name: "Água com Sabores",
+                price: "2,00€"
+              }
+            ]
+          },
+          {
+            id: "drinks",
+            title: "DRINKS (BEBIDAS)",
+            items: [
+              {
+                name: "Caipirinha",
+                price: "6,50€"
+              },
+              {
+                name: "Caipiroska",
+                price: "6,50€"
+              },
+              {
+                name: "Caipirão",
+                price: "6,50€"
+              },
+              {
+                name: "Mojito",
+                price: "6,50€"
+              },
+              {
+                name: "Margarita",
+                price: "6,75€"
+              },
+              {
+                name: "Long Island",
+                price: "8,00€"
+              },
+              {
+                name: "Pina Colada",
+                price: "6,50€"
+              },
+              {
+                name: "Tequila Sunrise",
+                price: "6,75€"
+              },
+              {
+                name: "Whisky Cola 50cl",
+                price: "6,50€"
+              },
+              {
+                name: "Gin Tónica 50cl",
+                price: "6,50€"
+              },
+              {
+                name: "Vodka com Sumo 50cl (Laranja, Limão, Maracujá e Maçã)",
+                price: "6,50€"
+              }
+            ]
+          },
+          {
+            id: "somersby",
+            title: "SOMERSBY",
+            items: [
+              {
+                name: "Somersby 30cl",
+                price: "2,25€"
+              },
+              {
+                name: "Somersby 50cl",
+                price: "4,25€"
+              },
+              {
+                name: "Somersby Garrafa 33cl (Blackberry ou Maçã)",
+                price: "2,50€"
+              },
+              {
+                name: "Somersby com Absinto 30cl",
+                price: "3,10€"
+              },
+              {
+                name: "Somersby com Absinto 50cl",
+                price: "5,10€"
+              }
+            ]
+          },
+          {
+            id: "sangrias",
+            title: "SANGRIAS E ESPUMANTE",
+            items: [
+              {
+                name: "Sangria Tinta ou Branca 30cl",
+                price: "3,00€"
+              },
+              {
+                name: "Sangria Tinta ou Branca 50cl",
+                price: "5,00€"
+              },
+              {
+                name: "Sangria de Frutos Vermelhos 30cl",
+                price: "3,00€"
+              },
+              {
+                name: "Sangria de Frutos Vermelhos 50cl",
+                price: "5,00€"
+              }
+            ]
+          },
+          {
+            id: "shots",
+            title: "SHOTS",
+            items: [
+              {
+                name: "Beirão",
+                price: "2,00€"
+              },
+              {
+                name: "CRF (Aguardente)",
+                price: "2,00€"
+              },
+              {
+                name: "Tequila (com limão e sal)",
+                price: "2,00€"
+              },
+              {
+                name: "Vodka",
+                price: "2,00€"
+              },
+              {
+                name: "Whisky",
+                price: "2,00€"
+              },
+              {
+                name: "B-52 (Licor de café, Irish Cream e absinto)",
+                price: "2,50€",
+                isPopular: true
+              },
+              {
+                name: "Biko (Bailey's e licor de café)",
+                price: "2,50€"
+              },
+              {
+                name: "Bip Bip (Tequila, laranja e canela)",
+                price: "2,50€"
+              },
+              {
+                name: "Dragon Ball (Elaborado)",
+                price: "2,50€"
+              },
+              {
+                name: "Kalashnikov (Vodka, absinto e limão)",
+                price: "2,50€"
+              },
+              {
+                name: "Moranguinho (Batida de coco, groselha e canela)",
+                price: "2,50€"
+              },
+              {
+                name: "Orgasmo (Batida de coco, natas e groselha)",
+                price: "2,50€"
+              },
+              {
+                name: "Pastel de Nata (Licor de café, licor de ovo e canela)",
+                price: "2,50€"
+              },
+              {
+                name: "Quiet (Vodka preta e absinto)",
+                price: "2,50€"
+              },
+              {
+                name: "Ratatouille (Whisky e Tia Maria)",
+                price: "2,50€"
+              },
+              {
+                name: "TGV (Tequila, Vodka, Gin)",
+                price: "2,50€"
+              },
+              {
+                name: "Toda Lá (Absinto e canela)",
+                price: "2,50€"
+              },
+              {
+                name: "Bagaço",
+                price: "1,00€"
+              },
+              {
+                name: "Bagaço com Mel",
+                price: "1,20€"
+              }
+            ]
+          }
+        ],
+        specials: [
+          {
+            badge: "BEST",
+            item: {
+              name: "Mini Super Bock",
+              price: "0,95€"
+            }
+          },
+          {
+            badge: "PACK",
+            item: {
+              name: "Balde de Minis (11 un)",
+              price: "9,50€"
+            }
+          },
+          {
+            badge: "TOP",
+            item: {
+              name: "Francesinha",
+              price: "11,90€"
+            }
+          },
+          {
+            badge: "BEST",
+            item: {
+              name: "Shots",
+              price: "2,50€"
+            }
+          }
+        ],
+        note: "Preços sujeitos a alteração · Pergunte ao balcão pelo prato do dia"
     },
     history: {
       tag: "Quem somos",
@@ -182,69 +763,650 @@ export const dictionaries = {
       captions: ["Sharish Gin", "Red Bull & Gin", "Super Bock Selecção 1927", "Aperol Spritz", "Greenall's Gin", "Iconic Counter", "Cedofeita Nights", "The Heart of 77"]
     },
     menu: {
-      tag: "Food & Drinks",
-      title: "MENU",
-      tabs: { drinks: "DRINKS", food: "FOOD" },
-      categories: {
-        sandwiches: "SANDWICHES & SNACKS",
-        plates: "PLATES",
-        savories: "SAVORIES",
-        pizzas: "PIZZAS",
-        sharing: "TO SHARE",
-        beer_bottle: "BEER (BOTTLE)",
-        beer_draft: "DRAFT BEER",
-        wines: "WINES",
-        cocktails: "DRINKS & COCKTAILS",
-        shots: "SHOTS"
-      },
-      items: {
-        mini: { name: "Mini Super Bock", price: "0,95€", isPopular: true },
-        mini_stout: { name: "Mini Stout 20cl", price: "1,10€" },
-        super_bock_33: { name: "Super Bock 33cl", price: "2,40€" },
-        super_bock_especial: { name: "Super Bock Gluten Free / Stout / Green", price: "2,60€" },
-        coruja: { name: "Coruja IPA", price: "2,45€" },
-        stella: { name: "Stella Artois", price: "2,95€" },
-        desperados: { name: "Desperados", price: "3,25€" },
-        balde: { name: "Bucket of Minis (11 un)", price: "9,50€", isPopular: true },
-        fino: { name: "Small Draft (Fino)", price: "1,50€" },
-        principe: { name: "Medium Draft (Príncipe)", price: "2,25€" },
-        rei: { name: "Large Draft (Rei)", price: "2,50€" },
-        caneca: { name: "Pint", price: "3,20€" },
-        shots_mix: { name: "Shots: Kalashnikov, Dragon Ball, B-52, Tequila", price: "2,00€", isPopular: true },
-        bagaço: { name: "Bagaço", price: "1,00€" },
-        vinho_maduro: { name: "Red Wine (Tavedo, Alandro, Esteve)", price: "2,00€", priceAlt: "6,50€" },
-        vinho_verde: { name: "Green Wine (Casal Garcia, Gazela)", price: "2,50€", priceAlt: "12,95€" },
-        caipirinha: { name: "Caipirinha", price: "6,50€" },
-        mojito: { name: "Mojito", price: "6,50€" },
-        gin_tonica: { name: "Gin Tonic", price: "6,50€" },
-        bifana: { name: "Bifana (Pork Sandwich)", price: "2,50€", isPopular: true },
-        sande_mista: { name: "Ham & Cheese Sandwich", price: "2,50€" },
-        sande_queijo: { name: "Cheese Sandwich", price: "1,95€" },
-        sande_fiambre: { name: "Ham Sandwich", price: "1,80€" },
-        sande_fiambre_ovo: { name: "Ham Sandwich w/ egg", price: "2,60€" },
-        tosta_mista: { name: "Ham & Cheese Toastie", price: "4,25€" },
-        tosta_mista_77: { name: "Toastie à 77", price: "6,95€" },
-        panado_frango: { name: "Chicken Breaded", price: "3,10€" },
-        panado_porco: { name: "Pork Breaded", price: "2,80€" },
-        cachorro: { name: "Hot Dog", price: "4,75€" },
-        prego: { name: "Steak in Bread", price: "4,95€" },
-        prego_77: { name: "Steak in Bread à 77", price: "9,95€" },
-        francesinha: { name: "Francesinha", price: "11,90€", isPopular: true },
-        francesinha_esp: { name: "Special Francesinha", price: "13,95€" },
-        prego_prato: { name: "Steak on Plate", price: "12,75€" },
-        bifanas_prato: { name: "Bifanas on Plate", price: "7,95€" },
-        sopa: { name: "Soup", price: "2,25€" },
-        coxinha: { name: "Chicken Coxinha", price: "2,20€" },
-        rissol_leitao: { name: "Suckling Pig Rissol", price: "2,20€" },
-        rissol_vários: { name: "Rissol (Meat, Shrimp or Mushroom)", price: "1,80€" },
-        chamuca: { name: "Meat Samosa w/ curry", price: "1,80€" },
-        bacalhau: { name: "Codfish Cake", price: "1,70€" },
-        frango_passarinho: { name: "Fried Chicken Bits", price: "6,50€" },
-        moelas: { name: "Gizzards Plate", price: "6,25€" },
-        batata_queijo_bacon: { name: "Fries w/ Cheese and Bacon", price: "5,80€", isPopular: true }
-      },
-      note: "Prices subject to change · Ask at the counter for the dish of the day",
-      labels: { copo: "Glass", garrafa: "Bottle" }
+      tag: "What we have to eat and drink",
+        title: "MENU",
+        tabs: {
+          drinks: "DRINKS",
+          food: "FOOD"
+        },
+        food: [
+          {
+            id: "salgados",
+            title: "SALGADOS",
+            items: [
+              {
+                name: "Coxinha de Frango",
+                price: "2,20€"
+              },
+              {
+                name: "Rissol de Leitão",
+                price: "2,20€"
+              },
+              {
+                name: "Rissol de Carne",
+                price: "1,80€"
+              },
+              {
+                name: "Rissol de Camarão",
+                price: "1,80€"
+              },
+              {
+                name: "Rissol de Cogumelos com caril",
+                price: "1,80€"
+              },
+              {
+                name: "Chamuça de Carne com caril",
+                price: "1,80€"
+              },
+              {
+                name: "Croquete de Carne",
+                price: "1,80€"
+              },
+              {
+                name: "Bolinho de Bacalhau",
+                price: "1,70€"
+              }
+            ]
+          },
+          {
+            id: "pizzas",
+            title: "PIZZAS",
+            items: [
+              {
+                name: "Pizza Carbonara",
+                price: "2,60€"
+              },
+              {
+                name: "Pizza Mista com Azeitona",
+                price: "2,60€"
+              },
+              {
+                name: "Pizza Vegetariana",
+                price: "2,60€"
+              }
+            ]
+          },
+          {
+            id: "pizza_pao",
+            title: "PIZZA PÃO",
+            items: [
+              {
+                name: "Pizza Pão Mista (queijo e fiambre)",
+                price: "2,80€"
+              },
+              {
+                name: "Pizza Pão de Cogumelos",
+                price: "2,80€"
+              },
+              {
+                name: "Pizza Pão Carbonara",
+                price: "2,80€"
+              }
+            ]
+          },
+          {
+            id: "panikes",
+            title: "PANIKES E FOLHADOS",
+            items: [
+              {
+                name: "Panike Misto (queijo e fiambre)",
+                price: "1,75€"
+              },
+              {
+                name: "Panike Combinado (carne, queijo e fiambre)",
+                price: "2,25€"
+              },
+              {
+                name: "Folhado de Frango",
+                price: "2,20€"
+              },
+              {
+                name: "Folhado de Espinafres (Malha)",
+                price: "2,20€"
+              }
+            ]
+          },
+          {
+            id: "doces",
+            title: "DOCES",
+            items: [
+              {
+                name: "Pastel de Nata",
+                price: "1,60€"
+              },
+              {
+                name: "Panike de Chocolate",
+                price: "1,60€"
+              },
+              {
+                name: "Panike de Ovo Creme",
+                price: "1,60€"
+              }
+            ]
+          },
+          {
+            id: "feitos_no_pao",
+            title: "FEITOS NO PÃO",
+            items: [
+              {
+                name: "Bifana",
+                price: "2,50€",
+                isPopular: true
+              },
+              {
+                name: "Sande Mista",
+                price: "2,50€"
+              },
+              {
+                name: "Sande de Queijo",
+                price: "1,95€"
+              },
+              {
+                name: "Sande de Fiambre",
+                price: "1,80€"
+              },
+              {
+                name: "Sande de Fiambre com Ovo",
+                price: "2,60€"
+              },
+              {
+                name: "Tosta Mista",
+                price: "4,25€"
+              },
+              {
+                name: "Tosta Mista à 77",
+                price: "6,95€"
+              },
+              {
+                name: "Panado de Frango",
+                price: "3,10€"
+              },
+              {
+                name: "Panado de Porco",
+                price: "2,80€"
+              },
+              {
+                name: "Panado de Frango com Ovo Estrelado",
+                price: "4,10€"
+              },
+              {
+                name: "Panado de Porco com Ovo Estrelado",
+                price: "3,80€"
+              },
+              {
+                name: "Cachorro",
+                price: "4,75€"
+              },
+              {
+                name: "Cachorro à 77",
+                price: "7,25€"
+              },
+              {
+                name: "Americana (com ovo, fiambre, queijo, alface, tomate)",
+                price: "4,25€"
+              },
+              {
+                name: "Hambúrguer",
+                price: "5,25€"
+              },
+              {
+                name: "Hambúrguer com Ovo Estrelado",
+                price: "6,15€"
+              },
+              {
+                name: "Prego em Pão",
+                price: "4,95€"
+              },
+              {
+                name: "Prego em Pão com Ovo Estrelado",
+                price: "5,95€"
+              },
+              {
+                name: "Prego em Pão Misto",
+                price: "5,95€"
+              },
+              {
+                name: "Prego em Pão à 77",
+                price: "9,95€"
+              }
+            ]
+          },
+          {
+            id: "partilhar",
+            title: "PARA PARTILHAR",
+            items: [
+              {
+                name: "Frango à Passarinho (Dose pequena)",
+                price: "6,50€"
+              },
+              {
+                name: "Frango à Passarinho (Dose grande individual)",
+                price: "12,95€"
+              },
+              {
+                name: "Torresmo (Dose pequena)",
+                price: "6,75€"
+              },
+              {
+                name: "Torresmo (Dose grande individual)",
+                price: "12,95€"
+              },
+              {
+                name: "Batata Frita com Queijo e Bacon",
+                price: "5,80€",
+                isPopular: true
+              },
+              {
+                name: "Batata Frita com Bacon",
+                price: "4,70€"
+              },
+              {
+                name: "Batata Frita com Queijo",
+                price: "4,40€"
+              },
+              {
+                name: "Batata Frita Simples",
+                price: "3,25€"
+              },
+              {
+                name: "Pratinho de Moelas",
+                price: "6,25€"
+              },
+              {
+                name: "Punheta de Bacalhau",
+                price: "6,75€"
+              },
+              {
+                name: "Pica-pau",
+                price: "14,75€"
+              },
+              {
+                name: "Tremoços ou Amendoins",
+                price: "1,90€"
+              },
+              {
+                name: "Azeitonas",
+                price: "2,25€"
+              },
+              {
+                name: "Adicional à 77 (molho francesinha e queijo)",
+                price: "1,50€"
+              }
+            ]
+          },
+          {
+            id: "no_prato",
+            title: "NO PRATO",
+            items: [
+              {
+                name: "Francesinha",
+                price: "11,90€",
+                isPopular: true
+              },
+              {
+                name: "Francesinha Especial (com ovo e batata)",
+                price: "13,95€"
+              },
+              {
+                name: "Bifanas em Prato",
+                price: "7,95€"
+              },
+              {
+                name: "Prego em Prato",
+                price: "12,75€"
+              },
+              {
+                name: "Salsicha com Ovo e Batatas",
+                price: "7,95€"
+              },
+              {
+                name: "Sopa",
+                price: "2,25€"
+              }
+            ]
+          }
+        ],
+        drinks: [
+          {
+            id: "cerveja_garrafa",
+            title: "CERVEJA EM GARRAFA (SUPER BOCK)",
+            items: [
+              {
+                name: "Mini 20cl",
+                price: "0,95€",
+                isPopular: true
+              },
+              {
+                name: "Mini Stout 20cl",
+                price: "1,10€"
+              },
+              {
+                name: "Super Bock 33cl",
+                price: "2,40€"
+              },
+              {
+                name: "Super Bock sem glúten 33cl",
+                price: "2,60€"
+              },
+              {
+                name: "Super Bock Stout 33cl",
+                price: "2,60€"
+              },
+              {
+                name: "Super Bock Green 33cl",
+                price: "2,60€"
+              },
+              {
+                name: "Super Bock sem álcool 33cl",
+                price: "2,60€"
+              },
+              {
+                name: "Coruja Indian Pale Ale",
+                price: "2,45€"
+              },
+              {
+                name: "Stella Artois",
+                price: "2,95€"
+              },
+              {
+                name: "Desperados",
+                price: "3,25€"
+              },
+              {
+                name: "Balde de Minis (Pague 10 e leve 11)",
+                price: "9,50€",
+                isPopular: true
+              },
+              {
+                name: "Adicional para balde de Stout",
+                price: "+1,00€"
+              }
+            ]
+          },
+          {
+            id: "cerveja_pressao",
+            title: "CERVEJA À PRESSÃO",
+            items: [
+              {
+                name: "Fino 20cl",
+                price: "1,50€",
+                isPopular: true
+              },
+              {
+                name: "Príncipe 35cl",
+                price: "2,25€"
+              },
+              {
+                name: "Rei 40cl",
+                price: "2,50€"
+              },
+              {
+                name: "Caneca 50cl",
+                price: "3,20€"
+              }
+            ]
+          },
+          {
+            id: "vinhos",
+            title: "VINHOS",
+            labels: {
+              price1: "Copo",
+              price2: "Garrafa"
+            },
+            items: [
+              {
+                name: "Vinho Maduro Tinto ou Branco",
+                price: "2,00€",
+                priceAlt: ""
+              },
+              {
+                name: "Vinho Maduro Garrafa (Tavedo, Alandro, Esteva, Porta da Ravessa)",
+                price: "",
+                priceAlt: "6,50€"
+              },
+              {
+                name: "Vinho Verde Branco (Casal Garcia, Gazela, Muralhas) 37,5cl",
+                price: "",
+                priceAlt: "6,45€"
+              },
+              {
+                name: "Vinho Verde Branco (Casal Garcia, Gazela, Muralhas) 75cl",
+                price: "",
+                priceAlt: "12,95€"
+              }
+            ]
+          },
+          {
+            id: "aguas",
+            title: "ÁGUAS",
+            items: [
+              {
+                name: "Água Natural",
+                price: "1,70€"
+              },
+              {
+                name: "Água com Gás",
+                price: "1,80€"
+              },
+              {
+                name: "Água com Sabores",
+                price: "2,00€"
+              }
+            ]
+          },
+          {
+            id: "drinks",
+            title: "DRINKS (BEBIDAS)",
+            items: [
+              {
+                name: "Caipirinha",
+                price: "6,50€"
+              },
+              {
+                name: "Caipiroska",
+                price: "6,50€"
+              },
+              {
+                name: "Caipirão",
+                price: "6,50€"
+              },
+              {
+                name: "Mojito",
+                price: "6,50€"
+              },
+              {
+                name: "Margarita",
+                price: "6,75€"
+              },
+              {
+                name: "Long Island",
+                price: "8,00€"
+              },
+              {
+                name: "Pina Colada",
+                price: "6,50€"
+              },
+              {
+                name: "Tequila Sunrise",
+                price: "6,75€"
+              },
+              {
+                name: "Whisky Cola 50cl",
+                price: "6,50€"
+              },
+              {
+                name: "Gin Tónica 50cl",
+                price: "6,50€"
+              },
+              {
+                name: "Vodka com Sumo 50cl (Laranja, Limão, Maracujá e Maçã)",
+                price: "6,50€"
+              }
+            ]
+          },
+          {
+            id: "somersby",
+            title: "SOMERSBY",
+            items: [
+              {
+                name: "Somersby 30cl",
+                price: "2,25€"
+              },
+              {
+                name: "Somersby 50cl",
+                price: "4,25€"
+              },
+              {
+                name: "Somersby Garrafa 33cl (Blackberry ou Maçã)",
+                price: "2,50€"
+              },
+              {
+                name: "Somersby com Absinto 30cl",
+                price: "3,10€"
+              },
+              {
+                name: "Somersby com Absinto 50cl",
+                price: "5,10€"
+              }
+            ]
+          },
+          {
+            id: "sangrias",
+            title: "SANGRIAS E ESPUMANTE",
+            items: [
+              {
+                name: "Sangria Tinta ou Branca 30cl",
+                price: "3,00€"
+              },
+              {
+                name: "Sangria Tinta ou Branca 50cl",
+                price: "5,00€"
+              },
+              {
+                name: "Sangria de Frutos Vermelhos 30cl",
+                price: "3,00€"
+              },
+              {
+                name: "Sangria de Frutos Vermelhos 50cl",
+                price: "5,00€"
+              }
+            ]
+          },
+          {
+            id: "shots",
+            title: "SHOTS",
+            items: [
+              {
+                name: "Beirão",
+                price: "2,00€"
+              },
+              {
+                name: "CRF (Brandy)",
+                price: "2,00€"
+              },
+              {
+                name: "Tequila (with lemon and salt)",
+                price: "2,00€"
+              },
+              {
+                name: "Vodka",
+                price: "2,00€"
+              },
+              {
+                name: "Whisky",
+                price: "2,00€"
+              },
+              {
+                name: "B-52 (Coffee liqueur, Irish Cream and absinthe)",
+                price: "2,50€",
+                isPopular: true
+              },
+              {
+                name: "Biko (Bailey's and coffee liqueur)",
+                price: "2,50€"
+              },
+              {
+                name: "Bip Bip (Tequila, orange and cinnamon)",
+                price: "2,50€"
+              },
+              {
+                name: "Dragon Ball (Crafted)",
+                price: "2,50€"
+              },
+              {
+                name: "Kalashnikov (Vodka, absinthe and lemon)",
+                price: "2,50€"
+              },
+              {
+                name: "Moranguinho (Coconut liqueur, redcurrant and cinnamon)",
+                price: "2,50€"
+              },
+              {
+                name: "Orgasmo (Coconut liqueur, cream and redcurrant)",
+                price: "2,50€"
+              },
+              {
+                name: "Pastel de Nata (Coffee liqueur, egg liqueur and cinnamon)",
+                price: "2,50€"
+              },
+              {
+                name: "Quiet (Black vodka and absinthe)",
+                price: "2,50€"
+              },
+              {
+                name: "Ratatouille (Whisky and Tia Maria)",
+                price: "2,50€"
+              },
+              {
+                name: "TGV (Tequila, Vodka, Gin)",
+                price: "2,50€"
+              },
+              {
+                name: "Toda Lá (Absinthe and cinnamon)",
+                price: "2,50€"
+              },
+              {
+                name: "Bagaço",
+                price: "1,00€"
+              },
+              {
+                name: "Bagaço with Honey",
+                price: "1,20€"
+              }
+            ]
+          }
+        ],
+        specials: [
+          {
+            badge: "BEST",
+            item: {
+              name: "Mini Super Bock",
+              price: "0,95€"
+            }
+          },
+          {
+            badge: "PACK",
+            item: {
+              name: "Balde de Minis (11 un)",
+              price: "9,50€"
+            }
+          },
+          {
+            badge: "TOP",
+            item: {
+              name: "Francesinha",
+              price: "11,90€"
+            }
+          },
+          {
+            badge: "BEST",
+            item: {
+              name: "Shots",
+              price: "2,50€"
+            }
+          }
+        ],
+        note: "Prices subject to change · Ask at the counter for the daily special"
     },
     history: {
       tag: "Who we are",
@@ -332,69 +1494,650 @@ export const dictionaries = {
       captions: ["Ginebra Sharish", "Red Bull y Ginebra", "Super Bock Selecção 1927", "Aperol Spritz", "Ginebra Greenall's", "Barra Icónica", "Noches de Cedofeita", "El Corazón del 77"]
     },
     menu: {
-      tag: "Para Comer y Beber",
-      title: "MENÚ",
-      tabs: { drinks: "BEBIDAS", food: "COMIDA" },
-      categories: {
-        sandwiches: "SANDWICHES & SNACKS",
-        plates: "PLATOS",
-        savories: "SALADOS",
-        pizzas: "PIZZAS",
-        sharing: "PARA COMPARTIR",
-        beer_bottle: "CERVEZAS (BOTELLA)",
-        beer_draft: "CERVEZA DE PRESIÓN",
-        wines: "VINOS",
-        cocktails: "DRINKS & COCKTAILS",
-        shots: "CHUPITOS"
-      },
-      items: {
-        mini: { name: "Mini Super Bock", price: "0,95€", isPopular: true },
-        mini_stout: { name: "Mini Stout 20cl", price: "1,10€" },
-        super_bock_33: { name: "Super Bock 33cl", price: "2,40€" },
-        super_bock_especial: { name: "Super Bock sin gluten / Stout / Green", price: "2,60€" },
-        coruja: { name: "Coruja IPA", price: "2,45€" },
-        stella: { name: "Stella Artois", price: "2,95€" },
-        desperados: { name: "Desperados", price: "3,25€" },
-        balde: { name: "Cubo de Minis (11 un)", price: "9,50€", isPopular: true },
-        fino: { name: "Caña (Fino) 20cl", price: "1,50€" },
-        principe: { name: "Príncipe 35cl", price: "2,25€" },
-        rei: { name: "Rey 40cl", price: "2,50€" },
-        caneca: { name: "Pinta 50cl", price: "3,20€" },
-        shots_mix: { name: "Shots: Kalashnikov, Dragon Ball, B-52, Tequila", price: "2,00€", isPopular: true },
-        bagaço: { name: "Bagaço", price: "1,00€" },
-        vinho_maduro: { name: "Vino Maduro (Tavedo, Alandro, Esteve)", price: "2,00€", priceAlt: "6,50€" },
-        vinho_verde: { name: "Vino Verde (Casal Garcia, Gazela)", price: "2,50€", priceAlt: "12,95€" },
-        caipirinha: { name: "Caipirinha", price: "6,50€" },
-        mojito: { name: "Mojito", price: "6,50€" },
-        gin_tonica: { name: "Gin Tonic", price: "6,50€" },
-        bifana: { name: "Bifana", price: "2,50€", isPopular: true },
-        sande_mista: { name: "Sándwich Mixto", price: "2,50€" },
-        sande_queijo: { name: "Sándwich de Queso", price: "1,95€" },
-        sande_fiambre: { name: "Sándwich de Jamón", price: "1,80€" },
-        sande_fiambre_ovo: { name: "Sándwich de Jamón con huevo", price: "2,60€" },
-        tosta_mista: { name: "Tosta Mixta", price: "4,25€" },
-        tosta_mista_77: { name: "Tosta Mixta à 77", price: "6,95€" },
-        panado_frango: { name: "Pollo Empanado", price: "3,10€" },
-        panado_porco: { name: "Cerdo Empanado", price: "2,80€" },
-        cachorro: { name: "Perrito Caliente", price: "4,75€" },
-        prego: { name: "Prego en Pan", price: "4,95€" },
-        prego_77: { name: "Prego en Pan à 77", price: "9,95€" },
-        francesinha: { name: "Francesinha", price: "11,90€", isPopular: true },
-        francesinha_esp: { name: "Francesinha Especial", price: "13,95€" },
-        prego_prato: { name: "Prego al Plato", price: "12,75€" },
-        bifanas_prato: { name: "Bifanas al Plato", price: "7,95€" },
-        sopa: { name: "Sopa", price: "2,25€" },
-        coxinha: { name: "Coxinha de Pollo", price: "2,20€" },
-        rissol_leitao: { name: "Rissol de Lechón", price: "2,20€" },
-        rissol_vários: { name: "Rissol (Carne, Camarón o Setas)", price: "1,80€" },
-        chamuca: { name: "Samosa de carne con curry", price: "1,80€" },
-        bacalhau: { name: "Buñuelo de Bacalao", price: "1,70€" },
-        frango_passarinho: { name: "Pollo Frito Troceado", price: "6,50€" },
-        moelas: { name: "Mollejas al Plato", price: "6,25€" },
-        batata_queijo_bacon: { name: "Patatas con Queso y Bacon", price: "5,80€", isPopular: true }
-      },
-      note: "Precios sujetos a cambios · Pregunte en la barra por el plato del día",
-      labels: { copo: "Copa", garrafa: "Botella" }
+      tag: "Lo que tenemos para comer y beber",
+        title: "MENÚ",
+        tabs: {
+          drinks: "BEBIDAS",
+          food: "COMIDA"
+        },
+        food: [
+          {
+            id: "salgados",
+            title: "SALGADOS",
+            items: [
+              {
+                name: "Coxinha de Frango",
+                price: "2,20€"
+              },
+              {
+                name: "Rissol de Leitão",
+                price: "2,20€"
+              },
+              {
+                name: "Rissol de Carne",
+                price: "1,80€"
+              },
+              {
+                name: "Rissol de Camarão",
+                price: "1,80€"
+              },
+              {
+                name: "Rissol de Cogumelos com caril",
+                price: "1,80€"
+              },
+              {
+                name: "Chamuça de Carne com caril",
+                price: "1,80€"
+              },
+              {
+                name: "Croquete de Carne",
+                price: "1,80€"
+              },
+              {
+                name: "Bolinho de Bacalhau",
+                price: "1,70€"
+              }
+            ]
+          },
+          {
+            id: "pizzas",
+            title: "PIZZAS",
+            items: [
+              {
+                name: "Pizza Carbonara",
+                price: "2,60€"
+              },
+              {
+                name: "Pizza Mista com Azeitona",
+                price: "2,60€"
+              },
+              {
+                name: "Pizza Vegetariana",
+                price: "2,60€"
+              }
+            ]
+          },
+          {
+            id: "pizza_pao",
+            title: "PIZZA PÃO",
+            items: [
+              {
+                name: "Pizza Pão Mista (queijo e fiambre)",
+                price: "2,80€"
+              },
+              {
+                name: "Pizza Pão de Cogumelos",
+                price: "2,80€"
+              },
+              {
+                name: "Pizza Pão Carbonara",
+                price: "2,80€"
+              }
+            ]
+          },
+          {
+            id: "panikes",
+            title: "PANIKES E FOLHADOS",
+            items: [
+              {
+                name: "Panike Misto (queijo e fiambre)",
+                price: "1,75€"
+              },
+              {
+                name: "Panike Combinado (carne, queijo e fiambre)",
+                price: "2,25€"
+              },
+              {
+                name: "Folhado de Frango",
+                price: "2,20€"
+              },
+              {
+                name: "Folhado de Espinafres (Malha)",
+                price: "2,20€"
+              }
+            ]
+          },
+          {
+            id: "doces",
+            title: "DOCES",
+            items: [
+              {
+                name: "Pastel de Nata",
+                price: "1,60€"
+              },
+              {
+                name: "Panike de Chocolate",
+                price: "1,60€"
+              },
+              {
+                name: "Panike de Ovo Creme",
+                price: "1,60€"
+              }
+            ]
+          },
+          {
+            id: "feitos_no_pao",
+            title: "FEITOS NO PÃO",
+            items: [
+              {
+                name: "Bifana",
+                price: "2,50€",
+                isPopular: true
+              },
+              {
+                name: "Sande Mista",
+                price: "2,50€"
+              },
+              {
+                name: "Sande de Queijo",
+                price: "1,95€"
+              },
+              {
+                name: "Sande de Fiambre",
+                price: "1,80€"
+              },
+              {
+                name: "Sande de Fiambre com Ovo",
+                price: "2,60€"
+              },
+              {
+                name: "Tosta Mista",
+                price: "4,25€"
+              },
+              {
+                name: "Tosta Mista à 77",
+                price: "6,95€"
+              },
+              {
+                name: "Panado de Frango",
+                price: "3,10€"
+              },
+              {
+                name: "Panado de Porco",
+                price: "2,80€"
+              },
+              {
+                name: "Panado de Frango com Ovo Estrelado",
+                price: "4,10€"
+              },
+              {
+                name: "Panado de Porco com Ovo Estrelado",
+                price: "3,80€"
+              },
+              {
+                name: "Cachorro",
+                price: "4,75€"
+              },
+              {
+                name: "Cachorro à 77",
+                price: "7,25€"
+              },
+              {
+                name: "Americana (com ovo, fiambre, queijo, alface, tomate)",
+                price: "4,25€"
+              },
+              {
+                name: "Hambúrguer",
+                price: "5,25€"
+              },
+              {
+                name: "Hambúrguer com Ovo Estrelado",
+                price: "6,15€"
+              },
+              {
+                name: "Prego em Pão",
+                price: "4,95€"
+              },
+              {
+                name: "Prego em Pão com Ovo Estrelado",
+                price: "5,95€"
+              },
+              {
+                name: "Prego em Pão Misto",
+                price: "5,95€"
+              },
+              {
+                name: "Prego em Pão à 77",
+                price: "9,95€"
+              }
+            ]
+          },
+          {
+            id: "partilhar",
+            title: "PARA PARTILHAR",
+            items: [
+              {
+                name: "Frango à Passarinho (Dose pequena)",
+                price: "6,50€"
+              },
+              {
+                name: "Frango à Passarinho (Dose grande individual)",
+                price: "12,95€"
+              },
+              {
+                name: "Torresmo (Dose pequena)",
+                price: "6,75€"
+              },
+              {
+                name: "Torresmo (Dose grande individual)",
+                price: "12,95€"
+              },
+              {
+                name: "Batata Frita com Queijo e Bacon",
+                price: "5,80€",
+                isPopular: true
+              },
+              {
+                name: "Batata Frita com Bacon",
+                price: "4,70€"
+              },
+              {
+                name: "Batata Frita com Queijo",
+                price: "4,40€"
+              },
+              {
+                name: "Batata Frita Simples",
+                price: "3,25€"
+              },
+              {
+                name: "Pratinho de Moelas",
+                price: "6,25€"
+              },
+              {
+                name: "Punheta de Bacalhau",
+                price: "6,75€"
+              },
+              {
+                name: "Pica-pau",
+                price: "14,75€"
+              },
+              {
+                name: "Tremoços ou Amendoins",
+                price: "1,90€"
+              },
+              {
+                name: "Azeitonas",
+                price: "2,25€"
+              },
+              {
+                name: "Adicional à 77 (molho francesinha e queijo)",
+                price: "1,50€"
+              }
+            ]
+          },
+          {
+            id: "no_prato",
+            title: "NO PRATO",
+            items: [
+              {
+                name: "Francesinha",
+                price: "11,90€",
+                isPopular: true
+              },
+              {
+                name: "Francesinha Especial (com ovo e batata)",
+                price: "13,95€"
+              },
+              {
+                name: "Bifanas em Prato",
+                price: "7,95€"
+              },
+              {
+                name: "Prego em Prato",
+                price: "12,75€"
+              },
+              {
+                name: "Salsicha com Ovo e Batatas",
+                price: "7,95€"
+              },
+              {
+                name: "Sopa",
+                price: "2,25€"
+              }
+            ]
+          }
+        ],
+        drinks: [
+          {
+            id: "cerveja_garrafa",
+            title: "CERVEJA EM GARRAFA (SUPER BOCK)",
+            items: [
+              {
+                name: "Mini 20cl",
+                price: "0,95€",
+                isPopular: true
+              },
+              {
+                name: "Mini Stout 20cl",
+                price: "1,10€"
+              },
+              {
+                name: "Super Bock 33cl",
+                price: "2,40€"
+              },
+              {
+                name: "Super Bock sem glúten 33cl",
+                price: "2,60€"
+              },
+              {
+                name: "Super Bock Stout 33cl",
+                price: "2,60€"
+              },
+              {
+                name: "Super Bock Green 33cl",
+                price: "2,60€"
+              },
+              {
+                name: "Super Bock sem álcool 33cl",
+                price: "2,60€"
+              },
+              {
+                name: "Coruja Indian Pale Ale",
+                price: "2,45€"
+              },
+              {
+                name: "Stella Artois",
+                price: "2,95€"
+              },
+              {
+                name: "Desperados",
+                price: "3,25€"
+              },
+              {
+                name: "Balde de Minis (Pague 10 e leve 11)",
+                price: "9,50€",
+                isPopular: true
+              },
+              {
+                name: "Adicional para balde de Stout",
+                price: "+1,00€"
+              }
+            ]
+          },
+          {
+            id: "cerveja_pressao",
+            title: "CERVEJA À PRESSÃO",
+            items: [
+              {
+                name: "Fino 20cl",
+                price: "1,50€",
+                isPopular: true
+              },
+              {
+                name: "Príncipe 35cl",
+                price: "2,25€"
+              },
+              {
+                name: "Rei 40cl",
+                price: "2,50€"
+              },
+              {
+                name: "Caneca 50cl",
+                price: "3,20€"
+              }
+            ]
+          },
+          {
+            id: "vinhos",
+            title: "VINHOS",
+            labels: {
+              price1: "Copo",
+              price2: "Garrafa"
+            },
+            items: [
+              {
+                name: "Vinho Maduro Tinto ou Branco",
+                price: "2,00€",
+                priceAlt: ""
+              },
+              {
+                name: "Vinho Maduro Garrafa (Tavedo, Alandro, Esteva, Porta da Ravessa)",
+                price: "",
+                priceAlt: "6,50€"
+              },
+              {
+                name: "Vinho Verde Branco (Casal Garcia, Gazela, Muralhas) 37,5cl",
+                price: "",
+                priceAlt: "6,45€"
+              },
+              {
+                name: "Vinho Verde Branco (Casal Garcia, Gazela, Muralhas) 75cl",
+                price: "",
+                priceAlt: "12,95€"
+              }
+            ]
+          },
+          {
+            id: "aguas",
+            title: "ÁGUAS",
+            items: [
+              {
+                name: "Água Natural",
+                price: "1,70€"
+              },
+              {
+                name: "Água com Gás",
+                price: "1,80€"
+              },
+              {
+                name: "Água com Sabores",
+                price: "2,00€"
+              }
+            ]
+          },
+          {
+            id: "drinks",
+            title: "DRINKS (BEBIDAS)",
+            items: [
+              {
+                name: "Caipirinha",
+                price: "6,50€"
+              },
+              {
+                name: "Caipiroska",
+                price: "6,50€"
+              },
+              {
+                name: "Caipirão",
+                price: "6,50€"
+              },
+              {
+                name: "Mojito",
+                price: "6,50€"
+              },
+              {
+                name: "Margarita",
+                price: "6,75€"
+              },
+              {
+                name: "Long Island",
+                price: "8,00€"
+              },
+              {
+                name: "Pina Colada",
+                price: "6,50€"
+              },
+              {
+                name: "Tequila Sunrise",
+                price: "6,75€"
+              },
+              {
+                name: "Whisky Cola 50cl",
+                price: "6,50€"
+              },
+              {
+                name: "Gin Tónica 50cl",
+                price: "6,50€"
+              },
+              {
+                name: "Vodka com Sumo 50cl (Laranja, Limão, Maracujá e Maçã)",
+                price: "6,50€"
+              }
+            ]
+          },
+          {
+            id: "somersby",
+            title: "SOMERSBY",
+            items: [
+              {
+                name: "Somersby 30cl",
+                price: "2,25€"
+              },
+              {
+                name: "Somersby 50cl",
+                price: "4,25€"
+              },
+              {
+                name: "Somersby Garrafa 33cl (Blackberry ou Maçã)",
+                price: "2,50€"
+              },
+              {
+                name: "Somersby com Absinto 30cl",
+                price: "3,10€"
+              },
+              {
+                name: "Somersby com Absinto 50cl",
+                price: "5,10€"
+              }
+            ]
+          },
+          {
+            id: "sangrias",
+            title: "SANGRIAS E ESPUMANTE",
+            items: [
+              {
+                name: "Sangria Tinta ou Branca 30cl",
+                price: "3,00€"
+              },
+              {
+                name: "Sangria Tinta ou Branca 50cl",
+                price: "5,00€"
+              },
+              {
+                name: "Sangria de Frutos Vermelhos 30cl",
+                price: "3,00€"
+              },
+              {
+                name: "Sangria de Frutos Vermelhos 50cl",
+                price: "5,00€"
+              }
+            ]
+          },
+          {
+            id: "shots",
+            title: "SHOTS",
+            items: [
+              {
+                name: "Beirão",
+                price: "2,00€"
+              },
+              {
+                name: "CRF (Aguardiente)",
+                price: "2,00€"
+              },
+              {
+                name: "Tequila (con limón y sal)",
+                price: "2,00€"
+              },
+              {
+                name: "Vodka",
+                price: "2,00€"
+              },
+              {
+                name: "Whisky",
+                price: "2,00€"
+              },
+              {
+                name: "B-52 (Licor de café, Irish Cream y absenta)",
+                price: "2,50€",
+                isPopular: true
+              },
+              {
+                name: "Biko (Bailey's y licor de café)",
+                price: "2,50€"
+              },
+              {
+                name: "Bip Bip (Tequila, naranja y canela)",
+                price: "2,50€"
+              },
+              {
+                name: "Dragon Ball (Elaborado)",
+                price: "2,50€"
+              },
+              {
+                name: "Kalashnikov (Vodka, absenta y limón)",
+                price: "2,50€"
+              },
+              {
+                name: "Moranguinho (Batida de coco, grosella y canela)",
+                price: "2,50€"
+              },
+              {
+                name: "Orgasmo (Batida de coco, nata y grosella)",
+                price: "2,50€"
+              },
+              {
+                name: "Pastel de Nata (Licor de café, licor de huevo y canela)",
+                price: "2,50€"
+              },
+              {
+                name: "Quiet (Vodka negro y absenta)",
+                price: "2,50€"
+              },
+              {
+                name: "Ratatouille (Whisky y Tia Maria)",
+                price: "2,50€"
+              },
+              {
+                name: "TGV (Tequila, Vodka, Gin)",
+                price: "2,50€"
+              },
+              {
+                name: "Toda Lá (Absenta y canela)",
+                price: "2,50€"
+              },
+              {
+                name: "Bagaço",
+                price: "1,00€"
+              },
+              {
+                name: "Bagaço con Miel",
+                price: "1,20€"
+              }
+            ]
+          }
+        ],
+        specials: [
+          {
+            badge: "BEST",
+            item: {
+              name: "Mini Super Bock",
+              price: "0,95€"
+            }
+          },
+          {
+            badge: "PACK",
+            item: {
+              name: "Balde de Minis (11 un)",
+              price: "9,50€"
+            }
+          },
+          {
+            badge: "TOP",
+            item: {
+              name: "Francesinha",
+              price: "11,90€"
+            }
+          },
+          {
+            badge: "BEST",
+            item: {
+              name: "Shots",
+              price: "2,50€"
+            }
+          }
+        ],
+        note: "Precios sujetos a cambios · Pregunte en la barra por el plato del día"
     },
     history: {
       tag: "Quiénes somos",
