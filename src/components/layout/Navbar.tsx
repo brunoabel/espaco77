@@ -110,7 +110,7 @@ export default function Navbar() {
         {/* Language Select */}
         <select
           value={lang}
-          onChange={(e) => setLang(e.target.value as any)}
+          onChange={(e) => setLang(e.target.value as "en" | "pt" | "es")}
           style={{
             background: "transparent",
             color: "rgb(138, 114, 86)",

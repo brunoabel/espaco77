@@ -30,7 +30,7 @@ export default function MenuPage() {
   const parseItem = (item: MenuItem, catId: string) => {
     let displayName = item.name;
     let subText = item.sub || "";
-    let isNew = item.isNew || false;
+    const isNew = item.isNew || false;
     let isTop = false;
     let isMix = false;
 

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { X, ArrowRight, ShoppingCart } from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 interface GalleryPhoto {
