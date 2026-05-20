@@ -47,14 +47,6 @@ export default function Galeria() {
       category: "Cerveja"
     },
     {
-      id: 4,
-      src: "/assets/user-photo-1.jpg",
-      productName: "Bifana à 77",
-      price: "2,50 €",
-      description: "A rainha da casa. Carne suculenta, molho secreto e pão sempre fresco. O sabor autêntico do Porto.",
-      category: "Comida"
-    },
-    {
       id: 5,
       src: "/assets/aperol-spritz.jpg",
       productName: "Aperol Spritz",
@@ -64,7 +56,7 @@ export default function Galeria() {
     },
     {
       id: 6,
-      src: "/assets/user-photo-3.jpg",
+      src: "/assets/balde-de-minis.jpeg",
       productName: "Balde de Minis",
       price: "9,50 €",
       description: "11 unidades. O símbolo máximo do convívio no Espaço 77. Geladas, sempre.",
