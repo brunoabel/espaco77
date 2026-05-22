@@ -139,7 +139,7 @@ export default function Historia() {
           }}
         >
           <Image 
-            src="/assets/user-photo-1.jpg" 
+            src="/assets/espaco77-interior.jpg" 
             alt="Espaço 77 Vintage" 
             fill 
             className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
