@@ -68,7 +68,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
             color: "#f0e6cc", 
             fontSize: "1.5rem", 
             marginBottom: "2rem",
-            letterSpacing: "0.05em" 
+            letterSpacing: "0.05em",
+            textAlign: "center"
           }}
         >
           CHOOSE YOUR EXPERIENCE
