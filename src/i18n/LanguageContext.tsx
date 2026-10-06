@@ -12,6 +12,13 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+export function applyDocumentLanguage(
+  language: Language,
+  root: { lang: string },
+) {
+  root.lang = language;
+}
+
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Language>("pt");
   const [hasChosen, setHasChosen] = useState(false);
@@ -23,11 +30,14 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
+    applyDocumentLanguage(lang, document.documentElement);
+  }, [lang]);
+
+  useEffect(() => {
     const stored = localStorage.getItem("espaco77_lang") as Language;
     if (stored && dictionaries[stored]) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setLangState(stored);
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setHasChosen(true);
     }
   }, []);

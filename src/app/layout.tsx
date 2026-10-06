@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { LanguageProvider } from "@/i18n/LanguageContext";
-import Navbar from "@/components/layout/Navbar";
-import BottomNav from "@/components/layout/BottomNav";
+import AppShell from "@/components/layout/AppShell";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://espaco77.vercel.app"),
@@ -58,11 +57,7 @@ fbq('track', 'PageView');
       </head>
       <body className="min-h-screen bg-[#0a0604]">
         <LanguageProvider>
-          <Navbar />
-          <div className="pb-20 md:pb-0">
-            {children}
-          </div>
-          <BottomNav />
+          <AppShell>{children}</AppShell>
         </LanguageProvider>
       </body>
     </html>
