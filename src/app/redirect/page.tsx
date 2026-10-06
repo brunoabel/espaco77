@@ -1,13 +1,31 @@
-"use client";
+import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 
-import { useEffect } from "react";
+import NfcExperience from "@/components/nfc/NfcExperience";
+import { nfcConfig } from "@/config/nfc";
+import { getNfcAction } from "@/lib/nfc";
 
-const destinationUrl = "https://espaco77.pt/menu";
+export const metadata: Metadata = {
+  title: "Ligações NFC | Espaço 77",
+  robots: { index: false, follow: false },
+};
 
 export default function RedirectPage() {
-  useEffect(() => {
-    window.location.replace(destinationUrl);
-  }, []);
+  const action = getNfcAction(nfcConfig);
 
-  return null;
+  if (action.type === "redirect") {
+    redirect(action.href);
+  }
+
+  if (action.type === "instagram") {
+    return (
+      <NfcExperience
+        variant="instagram"
+        instagramHref={action.href}
+        links={nfcConfig.links}
+      />
+    );
+  }
+
+  return <NfcExperience variant="links" links={nfcConfig.links} />;
 }
